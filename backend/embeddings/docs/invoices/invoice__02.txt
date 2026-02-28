@@ -1,0 +1,16 @@
+Vendor Name: BluePeak Analytics
+Invoice #: BPA-8841
+Issued On: 05-Jan-2026
+Due By: 20-Jan-2026
+
+Items:
+
+Data Dashboard Setup – $2,000
+
+API Integration – $950
+
+Tax (10%): $295
+Grand Total: $3,245
+Status: Paid
+
+Notes: Thank you for your business.

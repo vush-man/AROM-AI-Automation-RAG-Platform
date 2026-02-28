@@ -1,0 +1,2 @@
+CRM Note
+Lead conversion delayed due to system lag. Sales rep reported 5-minute load time per record. Impacting productivity.

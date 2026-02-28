@@ -1,0 +1,23 @@
+Title: Payment Processing Policy 2024
+Effective Date: January 1, 2024
+
+Purpose
+The purpose of this Payment Processing Policy 2024 is to establish standardized procedures for the timely and accurate processing of vendor payments, reimbursements, and financial disbursements across the organization. This policy is intended to ensure compliance with contractual obligations, maintain positive vendor relationships, and support financial integrity and reporting accuracy.
+
+Scope
+This policy applies to all departments, including Finance, Procurement, Operations, and any employee involved in invoice submission, review, approval, or payment authorization. It covers domestic and international vendor payments, employee reimbursements, and recurring service payments.
+
+Detailed Rules and Procedures
+
+1. All vendor invoices must reference a valid Purchase Order (PO) issued by Procurement unless exempted under the Procurement Policy.
+2. Invoices must be submitted to Accounts Payable (AP) via the designated system. Manual submissions require written justification.
+3. Standard payment terms are Net 30 days from invoice receipt, unless otherwise specified in vendor agreements.
+4. AP shall verify invoice accuracy, match against PO and delivery confirmation, and confirm compliance with the Invoice Approval Workflow Policy.
+5. Payments exceeding departmental thresholds must follow the Financial Approval Hierarchy Policy.
+6. Any discrepancies must be documented and communicated to the originating department within five business days.
+7. Electronic payment methods are preferred. Wire transfers require dual authorization.
+8. Late payments may result in penalties; such cases must be escalated per the Escalation Management Policy.
+9. Manual processing should be minimized; exceptions must be logged for audit review.
+
+Escalation and Compliance
+Non-compliance may result in delayed payments or internal review. Persistent delays or policy violations must be escalated to the Finance Controller and, where necessary, the CFO. Internal Audit reserves the right to review payment records quarterly to ensure adherence to this policy.

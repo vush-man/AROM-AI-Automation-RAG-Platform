@@ -1,0 +1,8 @@
+Vendor: GreenGrid Energy
+Invoice ID: GGE-912
+Issue: 28-Jan-2026 | Due: 12-Feb-2026
+Line Items: Solar Maintenance – $1,800
+Tax (5%): $90
+Total: $1,890
+Status: Paid
+Notes: Annual maintenance contract.

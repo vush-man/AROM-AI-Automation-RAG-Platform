@@ -1,0 +1,6 @@
+Internal Email
+To: CFO
+Subject: Escalation – Overdue Vendor Payments
+
+Several vendors, including Apex Metals (INV-4587) and BluePort Logistics (INV-3319), have sent repeated reminders. Payments are 45+ days overdue. This may breach Vendor SLA Policy.
+Please advise.

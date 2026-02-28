@@ -1,0 +1,2 @@
+Slack message – #finance-ops
+We’re still manually reconciling vendor sheets because the CRM export is broken again. This is the third time this quarter. It’s slowing everything down.

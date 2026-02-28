@@ -1,0 +1,21 @@
+From: Leo Martins, Vendor – BluePort Logistics
+Date: March 2, 2026
+Subject: INV-6001 Payment Status
+
+Awaiting confirmation.
+
+---
+
+From: Finance AP
+Date: March 2, 2026
+Subject: Re: INV-6001 Payment Status
+
+Processing delayed due to manual approval workflow.
+
+---
+
+From: Leo Martins
+Date: March 3, 2026
+Subject: Re: INV-6001 Payment Status
+
+Please expedite. Shipment scheduled next week.

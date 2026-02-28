@@ -1,0 +1,21 @@
+From: Vendor Billing – Silverline
+Date: March 6, 2026
+Subject: Reminder – INV-7788
+
+Invoice overdue by 25 days.
+
+---
+
+From: Rahul Mehta
+Date: March 6, 2026
+Subject: Re: Reminder – INV-7788
+
+Pending senior approval. Manual review due to discrepancy.
+
+---
+
+From: Sofia Patel
+Date: March 7, 2026
+Subject: Re: Reminder – INV-7788
+
+Clear immediately if compliant with Vendor SLA Policy.

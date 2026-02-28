@@ -1,0 +1,14 @@
+Vendor: Quantum Edge Consulting
+Invoice: QEC-445
+Date: 10-Jan-2026
+Due: 25-Jan-2026
+
+Services Rendered:
+
+Business Strategy Consultation – $3,200
+
+Tax (15%): $480
+Total: $3,680
+Status: Paid
+
+Notes: Includes 3 follow-up sessions.

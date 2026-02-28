@@ -1,0 +1,22 @@
+From: David Chen, Finance Controller
+Date: March 4, 2026
+Subject: Escalation – INV-3891
+
+Team,
+Vendor threatening to pause shipments over unpaid INV-3891.
+
+---
+
+From: Sofia Patel, CFO
+Date: March 4, 2026
+Subject: Re: Escalation – INV-3891
+
+Please prioritize. This violates Vendor SLA Policy if unresolved.
+
+---
+
+From: Rahul Mehta, AP Analyst
+Date: March 5, 2026
+Subject: Re: Escalation – INV-3891
+
+Manual processing delay due to missing PO reference. Requesting vendor clarification.

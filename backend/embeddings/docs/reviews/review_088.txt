@@ -1,0 +1,2 @@
+Slack
+We’re entering the same invoice details twice due to integration glitch.

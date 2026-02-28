@@ -1,0 +1,11 @@
+Vendor: Helix Software Labs
+Invoice: HSL-1001
+Issue Date: 20-Jan-2026
+Due Date: 04-Feb-2026
+
+Mobile App Development (Phase 1) – $7,000
+Tax (18%): $1,260
+Total: $8,260
+Status: Unpaid
+
+Notes: Phase 2 billed separately.

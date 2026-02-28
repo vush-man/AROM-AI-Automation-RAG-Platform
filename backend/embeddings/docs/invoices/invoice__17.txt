@@ -1,0 +1,9 @@
+Vendor: CodeCraft Technologies
+Invoice: CCT-4410
+Issue Date: 01-Feb-2026
+Due Date: 16-Feb-2026
+Line Items: Custom CRM Module – $5,200
+Tax (18%): $936
+Total Amount: $6,136
+Payment Status: Unpaid
+Notes: Includes 1-year warranty.

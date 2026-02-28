@@ -1,0 +1,2 @@
+Slack – #finance
+Why is INV-1023 still showing unpaid in CRM when ERP says processed? Getting mixed signals.

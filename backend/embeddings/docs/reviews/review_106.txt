@@ -1,0 +1,2 @@
+Slack
+CRM reports generating incorrect totals. Finance had to redo manually.

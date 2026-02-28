@@ -1,0 +1,14 @@
+Vendor: Vertex HR Solutions
+Invoice #: VHR-776
+Issued: 14-Jan-2026
+Due: 29-Jan-2026
+
+Items:
+
+Recruitment Services – $5,000
+
+Tax (18%): $900
+Total Due: $5,900
+Status: Unpaid
+
+Notes: Covers 2 senior hires.

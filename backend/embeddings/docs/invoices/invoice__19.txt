@@ -1,0 +1,9 @@
+Vendor: DataSphere Consulting
+Invoice ID: DSC-3009
+Issue: 03-Feb-2026
+Due: 18-Feb-2026
+Services: Data Migration – $3,000
+Tax (10%): $300
+Total Amount: $3,300
+Payment Status: Overdue
+Notes: Includes cloud setup.

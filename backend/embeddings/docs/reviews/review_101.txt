@@ -1,0 +1,2 @@
+CRM Summary
+Escalation logged per Vendor SLA Policy. Awaiting Finance confirmation.

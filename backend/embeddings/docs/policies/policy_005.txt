@@ -1,0 +1,19 @@
+Title: Escalation Management Policy
+Effective Date: January 10, 2024
+
+Purpose
+To define standardized procedures for escalating operational, financial, or customer-related issues requiring urgent attention.
+
+Scope
+Applies to all departments.
+
+Detailed Rules and Procedures
+
+1. Issues classified as “High” must be escalated within 24 hours.
+2. Escalation documentation must include summary, impact, and recommended action.
+3. Finance-related escalations must include invoice ID or transaction reference.
+4. Escalations should follow defined reporting lines.
+5. Repeated escalations on the same issue require management review.
+
+Escalation and Compliance
+Improper or excessive escalation may be reviewed by department leadership. Compliance with this policy is mandatory.

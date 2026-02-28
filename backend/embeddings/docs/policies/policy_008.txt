@@ -1,0 +1,19 @@
+Title: Financial Approval Hierarchy Policy
+Effective Date: January 1, 2024
+
+Purpose
+To define authorization thresholds for financial commitments.
+
+Scope
+All departments.
+
+Detailed Rules and Procedures
+
+1. Managers may approve up to $10,000.
+2. Directors up to $50,000.
+3. CFO approval required beyond $50,000.
+4. Emergency approvals require written justification.
+5. All approvals must be recorded electronically.
+
+Escalation and Compliance
+Unauthorized commitments may lead to disciplinary action.

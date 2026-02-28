@@ -1,0 +1,18 @@
+Title: SLA Enforcement Policy
+Effective Date: January 20, 2024
+
+Purpose
+To ensure contractual SLA commitments are met.
+
+Scope
+Operations, Customer Support, Finance.
+
+Detailed Rules and Procedures
+
+1. SLA breaches logged in CRM.
+2. Compensation decisions per Refund Policy.
+3. Vendor SLA breaches escalated to Procurement.
+4. Quarterly SLA performance review required.
+
+Escalation and Compliance
+Repeated breaches require executive review.

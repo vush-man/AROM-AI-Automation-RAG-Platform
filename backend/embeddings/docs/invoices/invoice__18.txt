@@ -1,0 +1,9 @@
+Vendor: Silverline Printing
+Invoice No: SP-2026-17
+Issue Date: 02-Feb-2026
+Due Date: 17-Feb-2026
+Items: Brochures – $750 | Banners – $450
+Tax (12%): $144
+Total: $1,344
+Status: Paid
+Notes: Delivered via courier.

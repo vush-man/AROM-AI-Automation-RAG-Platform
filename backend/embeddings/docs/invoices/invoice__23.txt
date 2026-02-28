@@ -1,0 +1,9 @@
+Vendor: RapidClean Services
+Invoice ID: RCS-119
+Issue Date: 09-Feb-2026
+Due Date: 24-Feb-2026
+Office Cleaning – $950
+Tax (5%): $47.5
+Total: $997.5
+Status: Paid
+Notes: Bi-weekly contract.

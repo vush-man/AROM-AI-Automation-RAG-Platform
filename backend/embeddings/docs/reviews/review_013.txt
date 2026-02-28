@@ -1,0 +1,2 @@
+Support Ticket
+Customer requesting refund for duplicate charge. No invoice ID provided. Says “you charged me twice.” Needs investigation.

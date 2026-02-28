@@ -1,0 +1,128 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 16px 0;
+    transition: background 0.3s, backdrop-filter 0.3s, border-color 0.3s;
+    border-bottom: 1px solid transparent;
+}
+
+.navbar--scrolled {
+    background: rgba(8, 8, 16, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+    text-shadow: 0 0 20px rgba(191, 95, 255, 0.5);
+    letter-spacing: 2px;
+}
+
+.navbar__links {
+    display: flex;
+    gap: 32px;
+}
+
+.navbar__link {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.25s;
+}
+
+.navbar__link:hover {
+    color: var(--text-primary);
+}
+
+.navbar__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar__signup {
+    padding: 10px 24px;
+    border-radius: var(--radius-pill);
+    font-size: 14px;
+}
+
+.navbar__hamburger {
+    display: none;
+    background: transparent;
+    color: var(--text-primary);
+    padding: 8px;
+}
+
+/* Mobile overlay */
+.navbar__mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(8, 8, 16, 0.97);
+    backdrop-filter: blur(24px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 999;
+}
+
+.navbar__mobile--open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.navbar__mobile-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.navbar__mobile-link {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: color 0.25s;
+}
+
+.navbar__mobile-link:hover {
+    color: var(--accent);
+}
+
+.navbar__mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 240px;
+}
+
+@media (max-width: 768px) {
+
+    .navbar__links,
+    .navbar__actions {
+        display: none;
+    }
+
+    .navbar__hamburger {
+        display: block;
+    }
+}

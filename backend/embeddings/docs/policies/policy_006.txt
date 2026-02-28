@@ -1,0 +1,19 @@
+Title: Complaint Resolution Policy
+Effective Date: February 10, 2024
+
+Purpose
+To provide structured guidelines for handling customer complaints in a timely and professional manner.
+
+Scope
+Applies to Customer Support, Sales, and Operations.
+
+Detailed Rules and Procedures
+
+1. Complaints must be logged in CRM within 12 hours.
+2. Initial acknowledgment to customer within one business day.
+3. Complex complaints requiring cross-department action must follow Escalation Management Policy.
+4. Refunds must align with Refund and Reimbursement Policy.
+5. Resolution summaries must be documented.
+
+Escalation and Compliance
+Unresolved complaints beyond 10 days require management review.

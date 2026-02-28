@@ -1,0 +1,2 @@
+Slack
+Manual PO creation is eating half my day. Can we automate this already?

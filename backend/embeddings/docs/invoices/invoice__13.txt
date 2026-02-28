@@ -1,0 +1,12 @@
+Vendor: Nova Training Institute
+Invoice ID: NTI-309
+Issue Date: 23-Jan-2026
+Due Date: 07-Feb-2026
+
+Corporate Training Program – $4,800
+
+Tax (12%): $576
+Total Amount: $5,376
+Status: Overdue
+
+Notes: 3-day workshop conducted onsite.

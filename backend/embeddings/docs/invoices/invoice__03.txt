@@ -1,0 +1,16 @@
+Vendor: Orion IT Services
+Invoice ID: OITS-1190
+Issue Date: 07-Jan-2026
+Due Date: 22-Jan-2026
+
+Line Items:
+
+Server Maintenance (Monthly) – $800
+
+Security Patch Deployment – $350
+
+Tax (12%): $138
+Total Amount: $1,288
+Payment Status: Overdue
+
+Notes: Late fee applicable after 5 days.

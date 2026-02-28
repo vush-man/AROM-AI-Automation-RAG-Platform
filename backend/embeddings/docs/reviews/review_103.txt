@@ -1,0 +1,3 @@
+Email
+Subject: Invoice Dispute – INV-1023
+Vendor claims unpaid; internal ledger shows processed. Need reconciliation.

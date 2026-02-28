@@ -1,0 +1,20 @@
+Title: Invoice Approval Workflow Policy
+Effective Date: January 15, 2024
+
+Purpose
+This policy defines the structured approval workflow for all invoices to ensure transparency, accountability, and financial accuracy.
+
+Scope
+Applies to all departments submitting invoices for payment.
+
+Detailed Rules and Procedures
+
+1. Invoices must be matched to valid POs before approval.
+2. Department managers must approve invoices within five business days of receipt.
+3. Invoices above $25,000 require secondary approval from Finance.
+4. Automated workflows must be used; manual approvals require justification.
+5. Delays beyond ten business days must be reported to Finance.
+6. Disputed invoices must be flagged and documented in CRM.
+
+Escalation and Compliance
+Failure to follow approval timelines may be escalated to department heads. Repeated violations may trigger audit review.

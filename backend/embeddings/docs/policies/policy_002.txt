@@ -1,0 +1,21 @@
+Title: Vendor Onboarding Policy
+Effective Date: February 1, 2024
+
+Purpose
+The Vendor Onboarding Policy establishes a structured process for evaluating, approving, and registering new vendors. This ensures legal compliance, risk mitigation, and alignment with corporate procurement standards.
+
+Scope
+This policy applies to Procurement, Finance, Legal, and all departments initiating vendor relationships.
+
+Detailed Rules and Procedures
+
+1. All new vendors must complete a standardized onboarding form including tax identification, banking details, and compliance certifications.
+2. Procurement shall conduct due diligence, including background verification and conflict-of-interest checks.
+3. Vendors must acknowledge acceptance of the Vendor SLA Policy and Payment Processing Policy 2024.
+4. Finance shall verify banking information and ensure compliance with anti-fraud controls.
+5. Legal review is required for contracts exceeding $50,000 annually.
+6. Vendor records must be entered into the CRM and ERP systems prior to any payment release.
+7. Changes to vendor information require documented approval and audit trail retention.
+
+Escalation and Compliance
+Exceptions require written approval from the Head of Procurement. Failure to comply may result in suspension of vendor registration or payment processing delays.

@@ -1,0 +1,4 @@
+Internal Email
+Subject: Conflicting Status on INV-3319
+
+ERP shows unpaid; CRM marked paid. Which system is accurate?

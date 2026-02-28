@@ -1,0 +1,16 @@
+Vendor: Insight Legal Associates
+Invoice ID: ILA-221
+Issue Date: 15-Jan-2026
+Due Date: 30-Jan-2026
+
+Line Items:
+
+Contract Drafting – $1,200
+
+Compliance Review – $800
+
+Tax (12%): $240
+Total Amount: $2,240
+Payment Status: Paid
+
+Notes: Professional fee only.

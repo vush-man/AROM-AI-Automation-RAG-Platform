@@ -1,0 +1,8 @@
+Vendor: IntelliGuard Security
+Invoice: IG-332
+Issue: 12-Feb-2026 | Due: 27-Feb-2026
+CCTV Installation – $2,800
+Tax (18%): $504
+Total: $3,304
+Status: Overdue
+Notes: Includes 8 cameras.

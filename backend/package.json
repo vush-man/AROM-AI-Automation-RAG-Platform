@@ -1,0 +1,31 @@
+{
+  "name": "amd-slingshot-backend",
+  "version": "1.0.0",
+  "description": "Backend for AMD Slingshot RAG Application (FAISS + Ollama)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^4.22.1",
+    "jsonwebtoken": "^9.0.3",
+    "pdf-parse": "^2.4.5",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "keywords": [
+    "RAG",
+    "FAISS",
+    "Ollama",
+    "embeddings",
+    "audit"
+  ],
+  "author": "",
+  "license": "ISC"
+}

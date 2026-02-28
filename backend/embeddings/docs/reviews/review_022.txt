@@ -1,0 +1,2 @@
+Internal Discussion
+We need better invoice tracking dashboards. Current process relies on spreadsheets + manual updates. High risk of oversight.

@@ -1,0 +1,22 @@
+From: Priya Nair, Sales Lead
+Date: March 3, 2026
+Subject: CRM Missing Data – Client Refund
+
+Finance,
+Refund for Order #8821 stuck because CRM shows no invoice record.
+
+---
+
+From: Rahul Mehta, AP Analyst
+Date: March 3, 2026
+Subject: Re: CRM Missing Data – Client Refund
+
+We cannot process without invoice ID. Please escalate to IT.
+
+---
+
+From: Kevin Brown, IT Manager
+Date: March 4, 2026
+Subject: Re: CRM Missing Data – Client Refund
+
+CRM sync failed during Feb migration. Working on data restore.

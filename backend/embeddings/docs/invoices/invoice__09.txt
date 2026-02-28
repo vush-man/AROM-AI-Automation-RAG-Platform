@@ -1,0 +1,16 @@
+Vendor: Metro Office Supplies
+Invoice #: MOS-6609
+Issue Date: 16-Jan-2026
+Due Date: 31-Jan-2026
+
+Products:
+
+Printer Toners – $450
+
+A4 Paper (20 boxes) – $600
+
+Tax (8%): $84
+Total: $1,134
+Status: Paid
+
+Notes: Delivered on 15-Jan-2026.

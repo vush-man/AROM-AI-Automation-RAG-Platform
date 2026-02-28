@@ -1,0 +1,9 @@
+Vendor: Horizon Telecom
+Invoice #: HT-5541
+Issue Date: 05-Feb-2026
+Due Date: 20-Feb-2026
+Line Items: Corporate Plan (Jan) – $1,100
+Tax (8%): $88
+Total: $1,188
+Status: Paid
+Notes: Includes 20 SIM connections.

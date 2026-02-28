@@ -1,0 +1,8 @@
+Vendor: CloudNova Inc
+Invoice #: CN-7781
+Issued: 10-Feb-2026 | Due: 25-Feb-2026
+SaaS Subscription – $1,500
+Tax (10%): $150
+Total: $1,650
+Status: Unpaid
+Notes: Annual subscription.

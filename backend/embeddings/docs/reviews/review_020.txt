@@ -1,0 +1,3 @@
+CRM Case Log
+Issue: Customer dissatisfaction due to billing discrepancy.
+Action: Escalated to Finance; awaiting clarification from Accounts Payable.

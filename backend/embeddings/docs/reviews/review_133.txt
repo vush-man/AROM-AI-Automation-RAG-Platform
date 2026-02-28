@@ -1,0 +1,2 @@
+Internal Note
+Manual audit revealed 3 misapplied payments. Investigating.

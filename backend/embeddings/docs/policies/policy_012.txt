@@ -1,0 +1,18 @@
+Title: Procurement Policy
+Effective Date: February 15, 2024
+
+Purpose
+To govern purchasing activities.
+
+Scope
+All departments.
+
+Detailed Rules and Procedures
+
+1. Purchases require approved PO.
+2. Competitive bidding required for >$25,000.
+3. Vendor selection must align with Vendor Onboarding Policy.
+4. Emergency purchases require documentation.
+
+Escalation and Compliance
+Unauthorized purchases subject to review.

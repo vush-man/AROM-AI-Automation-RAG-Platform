@@ -1,0 +1,2 @@
+Slack
+CRM search lagging 4–5 mins per query. Sales losing time daily.

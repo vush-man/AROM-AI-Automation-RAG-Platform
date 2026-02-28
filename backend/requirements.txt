@@ -1,0 +1,15 @@
+langgraph
+langchain
+langchain_ollama
+langchain_community
+langgraph-checkpoint-SQLite
+faiss-cpu
+pypdf
+langchain-unstructured[local]
+unstructured
+unstructured[all-docs]
+pytesseract
+unstructured-inference
+langchain-google-community
+google-auth-oauthlib
+flask

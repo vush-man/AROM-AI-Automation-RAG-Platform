@@ -1,0 +1,21 @@
+From: Grace Kim, Finance Analyst
+Date: March 5, 2026
+Subject: Reconciliation Issues
+
+Several invoices including INV-2045 show mismatched amounts in CRM vs ERP.
+
+---
+
+From: David Chen
+Date: March 5, 2026
+Subject: Re: Reconciliation Issues
+
+Escalate to IT and cc CFO.
+
+---
+
+From: Kevin Brown
+Date: March 6, 2026
+Subject: Re: Reconciliation Issues
+
+Likely migration artifact. Will audit logs.

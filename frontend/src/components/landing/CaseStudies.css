@@ -1,0 +1,119 @@
+.cases-carousel {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 0;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+.cases-carousel::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.case-card {
+    min-width: 380px;
+    max-width: 420px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    background: linear-gradient(135deg,
+            rgba(191, 95, 255, 0.06),
+            var(--bg-card));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+/* Light-swipe overlay — same as .card */
+.case-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(105deg,
+            transparent 20%,
+            rgba(191, 95, 255, 0.06) 40%,
+            rgba(191, 95, 255, 0.12) 50%,
+            rgba(191, 95, 255, 0.06) 60%,
+            transparent 80%);
+    z-index: 0;
+    pointer-events: none;
+    transition: none;
+}
+
+.case-card:hover::before {
+    animation: lightSwipe 2.5s ease forwards;
+}
+
+.case-card:hover {
+    border-color: rgba(191, 95, 255, 0.35);
+    box-shadow: 0 0 32px rgba(191, 95, 255, 0.12);
+    transform: translateY(-4px);
+}
+
+.case-card>* {
+    position: relative;
+    z-index: 1;
+}
+
+.case-card__badge {
+    display: inline-block;
+    background: rgba(191, 95, 255, 0.1);
+    border: 1px solid rgba(191, 95, 255, 0.25);
+    color: var(--accent);
+    padding: 4px 14px;
+    border-radius: var(--radius-pill);
+    font-size: 12px;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.case-card__quote {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-primary);
+    font-style: italic;
+}
+
+.case-card__desc {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.case-card__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.case-stat {
+    background: rgba(57, 255, 153, 0.08);
+    color: var(--success);
+    border: 1px solid rgba(57, 255, 153, 0.2);
+    padding: 5px 14px;
+    border-radius: var(--radius-pill);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+@media (max-width: 640px) {
+    .case-card {
+        min-width: 300px;
+    }
+}

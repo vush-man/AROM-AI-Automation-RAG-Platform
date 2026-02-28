@@ -1,0 +1,61 @@
+.cta-banner {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.cta-banner__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.cta-banner__bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(2px 2px at 10% 20%, rgba(191, 95, 255, 0.3) 50%, transparent 51%),
+        radial-gradient(2px 2px at 30% 70%, rgba(191, 95, 255, 0.2) 50%, transparent 51%),
+        radial-gradient(2px 2px at 50% 40%, rgba(191, 95, 255, 0.25) 50%, transparent 51%),
+        radial-gradient(2px 2px at 70% 80%, rgba(191, 95, 255, 0.15) 50%, transparent 51%),
+        radial-gradient(2px 2px at 85% 30%, rgba(191, 95, 255, 0.2) 50%, transparent 51%),
+        radial-gradient(2px 2px at 90% 60%, rgba(191, 95, 255, 0.3) 50%, transparent 51%);
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.cta-banner__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.cta-banner__sub {
+    color: var(--text-secondary);
+    font-size: 17px;
+    max-width: 480px;
+}
+
+.cta-banner__actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+    .cta-banner__actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .cta-banner__actions .btn-primary,
+    .cta-banner__actions .btn-secondary {
+        justify-content: center;
+        width: 100%;
+    }
+}

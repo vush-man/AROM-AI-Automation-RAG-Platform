@@ -1,0 +1,21 @@
+From: Anita Kapoor, Procurement
+Date: March 3, 2026
+Subject: PO Missing for INV-3891
+
+Finance claims no PO attached.
+
+---
+
+From: Rahul Mehta
+Date: March 3, 2026
+Subject: Re: PO Missing for INV-3891
+
+CRM attachment link broken.
+
+---
+
+From: Kevin Brown
+Date: March 4, 2026
+Subject: Re: PO Missing for INV-3891
+
+Investigating attachment sync bug.

@@ -1,0 +1,8 @@
+Vendor: Atlas Hardware Supplies
+Invoice: AHS-890
+Issue: 08-Feb-2026 | Due: 23-Feb-2026
+Equipment – $4,000
+Tax (12%): $480
+Total: $4,480
+Status: Paid
+Notes: Includes warranty.

@@ -1,0 +1,2 @@
+Slack
+We really need automation. Manual approval chain is outdated.

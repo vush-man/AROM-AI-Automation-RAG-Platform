@@ -1,0 +1,18 @@
+Title: Manual Data Handling Guidelines
+Effective Date: March 10, 2024
+
+Purpose
+To regulate manual data entry and reduce processing risk.
+
+Scope
+All employees handling financial or CRM data.
+
+Detailed Rules and Procedures
+
+1. Manual entries must be logged.
+2. Dual verification required for financial data.
+3. Temporary spreadsheets must be archived.
+4. Automation initiatives encouraged.
+
+Escalation and Compliance
+Excessive manual reliance subject to audit review.

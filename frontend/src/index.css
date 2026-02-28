@@ -1,0 +1,455 @@
+/* ============================================
+   AROM — Global Design System
+   ============================================ */
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  --bg-primary: #080810;
+  --bg-secondary: #0F0F1A;
+  --bg-card: #13131F;
+  --bg-card-hover: #1A1A2E;
+  --accent: #BF5FFF;
+  --accent-glow: rgba(191, 95, 255, 0.35);
+  --accent-dim: #7B35CC;
+  --text-primary: #F0F0FF;
+  --text-secondary: #8888AA;
+  --text-muted: #55556A;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-accent: rgba(191, 95, 255, 0.4);
+  --success: #39FF99;
+  --warning: #FFB830;
+  --error: #FF4466;
+
+  --font-family: 'Sora', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+  --max-width: 1200px;
+  --transition: all 0.25s ease;
+}
+
+body.light-mode {
+  --bg-primary: #F0F2F5;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8F9FF;
+  --text-primary: #1A1A2E;
+  --text-secondary: #55556A;
+  --text-muted: #8888AA;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-accent: rgba(191, 95, 255, 0.25);
+}
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input,
+textarea {
+  font-family: var(--font-family);
+  border: none;
+  outline: none;
+}
+
+/* ---------- Typography ---------- */
+.text-hero {
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.text-h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.text-h3 {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 600;
+}
+
+.text-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.text-small {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.text-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+/* ---------- Scroll Reveal Animations ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-header .text-h2 {
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---------- Section Label Badge ---------- */
+.section-label {
+  display: inline-block;
+  background: rgba(191, 95, 255, 0.12);
+  border: 1px solid rgba(191, 95, 255, 0.3);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 16px;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 0 24px rgba(191, 95, 255, 0.45);
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background: #CC77FF;
+  box-shadow: 0 0 40px rgba(191, 95, 255, 0.65);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: var(--transition);
+}
+
+.btn-ghost:hover {
+  color: var(--text-primary);
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+/* Light-swipe overlay */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(105deg,
+      transparent 20%,
+      rgba(191, 95, 255, 0.06) 40%,
+      rgba(191, 95, 255, 0.12) 50%,
+      rgba(191, 95, 255, 0.06) 60%,
+      transparent 80%);
+  z-index: 0;
+  pointer-events: none;
+  transition: none;
+}
+
+.card:hover::before {
+  animation: lightSwipe 2.5s ease forwards;
+}
+
+.card:hover {
+  border-color: rgba(191, 95, 255, 0.35);
+  box-shadow: 0 0 32px rgba(191, 95, 255, 0.12);
+  transform: translateY(-4px);
+}
+
+/* Ensure card content stays on top */
+.card>* {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes lightSwipe {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 200%;
+  }
+}
+
+/* ---------- Inputs ---------- */
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 15px;
+  transition: border-color 0.25s;
+}
+
+.input:focus {
+  border-color: var(--accent);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ---------- Status Badges ---------- */
+.badge-success {
+  display: inline-block;
+  background: rgba(57, 255, 153, 0.1);
+  color: var(--success);
+  border: 1px solid rgba(57, 255, 153, 0.25);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-warning {
+  display: inline-block;
+  background: rgba(255, 184, 48, 0.1);
+  color: var(--warning);
+  border: 1px solid rgba(255, 184, 48, 0.25);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-error {
+  display: inline-block;
+  background: rgba(255, 68, 102, 0.1);
+  color: var(--error);
+  border: 1px solid rgba(255, 68, 102, 0.25);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ---------- Keyframe Animations ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .section {
+    padding: 72px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+}

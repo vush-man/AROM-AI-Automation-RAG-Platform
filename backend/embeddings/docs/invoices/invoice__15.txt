@@ -1,0 +1,12 @@
+Vendor: Zenith Accounting Services
+Invoice ID: ZAS-120
+Issue Date: 26-Jan-2026
+Due Date: 10-Feb-2026
+
+Quarterly Audit – $3,500
+
+Tax (18%): $630
+Total Amount: $4,130
+Payment Status: Paid
+
+Notes: Covers Q4 2025.

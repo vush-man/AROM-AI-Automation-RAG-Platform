@@ -1,0 +1,18 @@
+Title: Risk and Exception Handling Policy
+Effective Date: January 25, 2024
+
+Purpose
+To define structured risk identification and exception management processes.
+
+Scope
+All departments.
+
+Detailed Rules and Procedures
+
+1. Risks must be documented with mitigation plans.
+2. Exceptions to policies require written approval.
+3. High-risk exceptions require executive review.
+4. Risk register maintained quarterly.
+
+Escalation and Compliance
+Failure to document risks may result in compliance findings.

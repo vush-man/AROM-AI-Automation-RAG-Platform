@@ -1,0 +1,2 @@
+Internal Note
+Manual data processing delays causing 3-day lag in invoice approvals.

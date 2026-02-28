@@ -1,0 +1,21 @@
+From: Alex Turner, Sales
+Date: March 4, 2026
+Subject: CRM Issue Affecting Billing
+
+Missing client notes causing delayed invoice issuance.
+
+---
+
+From: Kevin Brown
+Date: March 4, 2026
+Subject: Re: CRM Issue Affecting Billing
+
+We had outage on Feb 28. Some records incomplete.
+
+---
+
+From: Alex Turner
+Date: March 5, 2026
+Subject: Re: CRM Issue Affecting Billing
+
+This is impacting revenue recognition. Need fix ASAP.

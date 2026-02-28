@@ -1,0 +1,2 @@
+Slack
+Manual processing delays affecting monthly close timeline.

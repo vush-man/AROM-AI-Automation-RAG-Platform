@@ -1,0 +1,2 @@
+CRM Log
+Duplicate CRM entry caused confusion on payment status.

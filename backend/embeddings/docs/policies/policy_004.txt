@@ -1,0 +1,20 @@
+Title: CRM Data Entry Policy
+Effective Date: March 1, 2024
+
+Purpose
+To ensure accurate, timely, and standardized entry of data into the CRM system to support operational efficiency and reporting integrity.
+
+Scope
+All departments utilizing CRM, including Sales, Customer Success, and Finance.
+
+Detailed Rules and Procedures
+
+1. All client interactions must be logged within 24 hours.
+2. Invoice references must match ERP records.
+3. Duplicate entries must be avoided; suspected duplicates require review.
+4. Mandatory fields must not be bypassed.
+5. CRM outages must be reported to IT within one hour.
+6. Manual spreadsheets should not replace CRM entries except under documented exceptions.
+
+Escalation and Compliance
+Non-compliance may result in performance review implications. IT will audit CRM logs quarterly.

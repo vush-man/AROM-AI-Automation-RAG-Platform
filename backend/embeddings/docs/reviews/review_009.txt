@@ -1,0 +1,2 @@
+Internal Memo
+Finance is overwhelmed with month-end reconciliations. Manual invoice matching is taking too long and errors are increasing. We need automation urgently.

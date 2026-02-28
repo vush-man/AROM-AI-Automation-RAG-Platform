@@ -1,0 +1,2 @@
+Internal Chat
+We discussed automating approvals in Feb meeting. Still manually routing invoices. Why?

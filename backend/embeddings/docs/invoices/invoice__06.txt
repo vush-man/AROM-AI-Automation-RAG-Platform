@@ -1,0 +1,14 @@
+Vendor: Apex Cloud Systems
+Invoice ID: ACS-9092
+Issue Date: 12-Jan-2026
+Due Date: 27-Jan-2026
+
+Line Items:
+• Cloud Hosting (Quarterly) – $2,400
+• Backup Services – $300
+
+Tax (5%): $135
+Total Amount: $2,835
+Payment Status: Paid
+
+Notes: Includes premium support.

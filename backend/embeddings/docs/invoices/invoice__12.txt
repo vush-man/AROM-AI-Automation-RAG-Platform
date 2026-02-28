@@ -1,0 +1,13 @@
+Vendor Name: Prime Logistics Ltd
+Invoice No: PLL-7788
+Issued: 22-Jan-2026
+Due: 06-Feb-2026
+
+Freight Charges – $2,200
+Insurance – $300
+
+Tax (5%): $125
+Total Amount: $2,625
+Payment Status: Paid
+
+Notes: Shipment ID #PX7743.

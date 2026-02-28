@@ -1,0 +1,3 @@
+Email
+Subject: Clarification on INV-3319
+According to our records, INV-3319 was cleared last week. Can someone confirm with BluePort? Conflicting info in CRM vs ERP.

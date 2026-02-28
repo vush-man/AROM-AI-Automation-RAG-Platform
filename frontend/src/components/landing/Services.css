@@ -1,0 +1,265 @@
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 32px;
+}
+
+.service-card__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(191, 95, 255, 0.1);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.service-card__desc {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+.service-card__tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.service-tag {
+    background: rgba(191, 95, 255, 0.08);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(191, 95, 255, 0.2);
+}
+
+/* -- Service Widget (floating UI mockup) -- */
+.service-widget {
+    background: #0C0C18;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 13px;
+    font-family: 'Space Grotesk', monospace;
+    color: var(--text-secondary);
+}
+
+.sw-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.sw-filter {
+    font-size: 11px;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3px 10px;
+    border-radius: 6px;
+}
+
+.sw-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 8px 0;
+}
+
+.sw-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.sw-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.sw-item--active {
+    color: var(--text-primary);
+    border-left: 2px solid var(--accent);
+    padding-left: 10px;
+}
+
+.sw-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+.sw-dot--running {
+    background: var(--success);
+    animation: pulseGlow 2s infinite;
+}
+
+.sw-dot--waiting {
+    background: var(--warning);
+}
+
+.sw-dot--done {
+    background: var(--success);
+}
+
+.sw-meta {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.sw-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.sw-actions span {
+    flex: 1;
+    text-align: center;
+    padding: 6px 0;
+    background: rgba(191, 95, 255, 0.08);
+    border: 1px solid rgba(191, 95, 255, 0.2);
+    border-radius: 6px;
+    font-size: 11px;
+    color: var(--accent);
+    cursor: default;
+}
+
+.sw-chat-msg {
+    padding: 8px 0;
+    line-height: 1.5;
+}
+
+.sw-chat-msg--dim {
+    color: var(--text-muted);
+}
+
+.sw-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sw-progress-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 4px;
+    position: relative;
+}
+
+.sw-progress-bar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    background: var(--border);
+    z-index: -1;
+    width: 100%;
+    transform: scaleX(1.25);
+    transform-origin: left;
+}
+
+.sw-progress span {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.sw-calendar {
+    display: flex;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.sw-cal-day {
+    font-size: 11px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+}
+
+.sw-cal-day--active {
+    background: var(--accent);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- Rotating Glow Border exclusively for Service Cards ---------- */
+.card.service-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card.service-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg,
+            transparent 0deg,
+            transparent 60deg,
+            rgba(191, 95, 255, 0.5) 120deg,
+            rgba(123, 53, 204, 0.6) 180deg,
+            rgba(191, 95, 255, 0.5) 240deg,
+            transparent 300deg,
+            transparent 360deg);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: glowSpin 3s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.card.service-card::after {
+    content: '';
+    position: absolute;
+    inset: 1.5px;
+    background: var(--bg-card);
+    border-radius: calc(var(--radius-lg) - 1.5px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.card.service-card:hover::before {
+    opacity: 1;
+    animation: glowSpin 3s linear infinite !important;
+}
+
+.card.service-card:hover {
+    border-color: transparent !important;
+}

@@ -1,0 +1,16 @@
+Vendor: Nexora Solutions Pvt Ltd
+Invoice ID: NS-2026-001
+Issue Date: 02-Jan-2026
+Due Date: 17-Jan-2026
+
+Line Items:
+
+Web Application Development – $4,500
+
+UI/UX Design – $1,200
+
+Tax (18%): $1,026
+Total Amount: $6,726
+Payment Status: Unpaid
+
+Notes: Payment via bank transfer within 15 days.

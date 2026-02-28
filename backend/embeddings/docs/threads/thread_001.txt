@@ -1,0 +1,24 @@
+From: Laura Mendes, Accounts Receivable – Orion Supplies
+Date: March 2, 2026
+Subject: Reminder – Outstanding Invoice INV-2045
+
+Dear Finance Team,
+Invoice INV-2045 (dated Jan 18) remains unpaid. Please confirm expected payment date as per Payment Policy 2024.
+
+---
+
+From: Rahul Mehta, AP Analyst
+Date: March 2, 2026
+Subject: Re: Reminder – Outstanding Invoice INV-2045
+
+Hi Laura,
+We are reviewing this internally. It appears pending approval from Procurement.
+
+---
+
+From: Anika Shah, Procurement Manager
+Date: March 3, 2026
+Subject: Re: Reminder – Outstanding Invoice INV-2045
+
+Rahul,
+Approval was submitted Feb 20. Please re-check CRM; status should show approved.
