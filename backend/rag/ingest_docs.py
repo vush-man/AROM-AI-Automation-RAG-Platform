@@ -21,7 +21,18 @@ def load_document(file_path):
     if loader_cls is None:
         print(f"   ⚠️  Skipping unsupported file type: {ext}")
         return []
-    return loader_cls(file_path).load()
+    try:
+        if loader_cls is TextLoader:
+            # Try utf-8 first, then fall back to latin-1
+            try:
+                return TextLoader(file_path, encoding="utf-8").load()
+            except UnicodeDecodeError:
+                print(f"   ⚠️  UTF-8 failed for {os.path.basename(file_path)}, retrying with latin-1")
+                return TextLoader(file_path, encoding="latin-1").load()
+        return loader_cls(file_path).load()
+    except Exception as e:
+        print(f"   ❌ Error loading {os.path.basename(file_path)}: {e}")
+        return []
 
 def main():
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -50,8 +61,14 @@ def main():
     for fp in file_paths:
         print(f"   Loading: {os.path.basename(fp)}")
         docs = load_document(fp)
+
+        # Tag each doc with its folder name as doc_type (e.g. invoices, reviews, policies, threads)
+        parent_folder = os.path.basename(os.path.dirname(fp)).lower()
+        for doc in docs:
+            doc.metadata["doc_type"] = parent_folder
+
         all_docs.extend(docs)
-        print(f"   ✔ Loaded {len(docs)} page(s)")
+        print(f"   ✔ Loaded {len(docs)} page(s) [type: {parent_folder}]")
 
     if not all_docs:
         print("⚠️  No content could be extracted from the documents.")
