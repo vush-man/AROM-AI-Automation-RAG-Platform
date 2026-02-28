@@ -14,10 +14,16 @@
     "express": "^4.22.1",
     "jsonwebtoken": "^9.0.3",
     "pdf-parse": "^2.4.5",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
+  },
+  "overrides": {
+    "tar": "^7.5.8",
+    "cacache": "^19.0.1",
+    "make-fetch-happen": "^14.0.3",
+    "node-gyp": "^11.1.0"
   },
   "keywords": [
     "RAG",
