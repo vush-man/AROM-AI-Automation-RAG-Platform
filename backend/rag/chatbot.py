@@ -103,7 +103,31 @@ def assign_priority(data):
 
     return "low"
 
-retriever = vector_store.as_retriever(search_type='similarity', search_kwargs={'k':4})
+# Keywords that map a query to a specific doc_type folder
+DOC_TYPE_KEYWORDS = {
+    "invoices": ["invoice", "invoices", "expenditure", "expenditures", "billing",
+                 "bill", "bills", "receipt", "receipts", "payment", "payments",
+                 "amount", "total amount", "due date", "vendor", "unpaid", "overdue"],
+    "reviews":  ["review", "reviews", "feedback", "rating", "ratings", "testimonial",
+                 "testimonials", "sentiment", "customer feedback", "negative review",
+                 "positive review", "complaint", "complaints"],
+    "policies": ["policy", "policies", "sop", "procedure", "guideline", "guidelines",
+                 "compliance", "regulation"],
+    "threads":  ["thread", "threads", "conversation", "email thread", "discussion",
+                 "correspondence", "support ticket", "ticket"],
+}
+
+def detect_doc_type(query: str):
+    """Detect the most relevant doc_type based on query keywords."""
+    query_lower = query.lower()
+    scores = {}
+    for doc_type, keywords in DOC_TYPE_KEYWORDS.items():
+        score = sum(1 for kw in keywords if kw in query_lower)
+        if score > 0:
+            scores[doc_type] = score
+    if scores:
+        return max(scores, key=scores.get)
+    return None
 
 @tool
 def rag_tool(query: str):
@@ -120,7 +144,18 @@ def rag_tool(query: str):
 
     DO NOT answer document-related questions without calling this tool first.
     """
-    result = retriever.invoke(query)
+    target_type = detect_doc_type(query)
+    k = 10
+
+    if target_type:
+        # Use FAISS native filtering — only search within the target doc_type
+        # fetch_k must be large enough to find docs of the target type among all candidates
+        result = vector_store.similarity_search(query, k=k, filter={"doc_type": target_type}, fetch_k=300)
+        print(f"[RAG] Retrieved {len(result)} '{target_type}' docs (native filter)")
+    else:
+        # No type detected — search all documents
+        result = vector_store.similarity_search(query, k=k)
+        print(f"[RAG] No doc_type detected, returning top {len(result)} results")
 
     context = [doc.page_content for doc in result]
     metadata = [doc.metadata for doc in result]
@@ -266,10 +301,18 @@ def extract_user_facts(messages):
     return facts
 
 EMAIL_KEYWORDS = ["email", "emails", "inbox", "mail", "mails", "gmail",
-                   "invoice", "invoices", "networking", "urgent", "important",
-                   "unread", "recent emails", "check my", "show me my",
-                   "vendor email", "client email", "payment", "billing",
+                   "unread", "recent emails", "check my email", "show me my email",
+                   "vendor email", "client email",
                    "meeting invite", "correspondence"]
+
+RAG_KEYWORDS = ["invoice", "invoices", "expenditure", "expenditures", "billing",
+                "bill", "bills", "receipt", "receipts", "payment", "payments",
+                "review", "reviews", "feedback", "rating", "ratings",
+                "complaint", "complaints", "sentiment", "testimonial",
+                "policy", "policies", "sop", "procedure", "guideline",
+                "report", "contract", "proposal", "feature", "changelog",
+                "document", "documents", "docs", "from the docs",
+                "support ticket", "thread", "threads"]
 
 MAX_CONTEXT_MESSAGES = 10
 
@@ -286,6 +329,11 @@ def chat_node(state: ChatState, config=None):
             break
 
     is_email_query = any(kw in last_user_msg for kw in EMAIL_KEYWORDS)
+    is_rag_query = any(kw in last_user_msg for kw in RAG_KEYWORDS)
+
+    # RAG takes priority — if the query mentions documents/invoices/reviews, use RAG
+    if is_rag_query:
+        is_email_query = False
 
     user_facts = extract_user_facts(state["messages"])
 
@@ -299,7 +347,11 @@ def chat_node(state: ChatState, config=None):
         "- NEVER answer document or email questions without calling the appropriate tool first.\n"
         "- Do NOT ask follow-up questions. Just call the tool immediately.\n"
         "- When analyzing data, provide actionable insights, summaries, and recommendations.\n"
-        "- For financial questions (expenditures, totals, costs), extract and calculate amounts from the retrieved documents.\n"
+        "- For financial questions (expenditures, totals, costs):\n"
+        "  * Extract EVERY dollar amount from the retrieved documents.\n"
+        "  * List each invoice with its ID, vendor, total amount, due date, and payment status.\n"
+        "  * Calculate and present the grand total.\n"
+        "  * Group by paid vs unpaid if relevant.\n"
         "- For review/feedback questions, identify patterns, sentiment trends, and suggest concrete improvements.\n"
         "- For feature suggestions, analyze user feedback and prioritize by frequency and impact.\n\n"
         "FORMATTING:\n"
@@ -319,7 +371,17 @@ def chat_node(state: ChatState, config=None):
             facts_str += f"- The user's name is {user_facts['user_name']}.\n"
         system_content += facts_str
 
-    if is_email_query:
+    print(f"[ROUTING] is_rag_query={is_rag_query}, is_email_query={is_email_query}, msg='{last_user_msg[:80]}'")
+
+    if is_rag_query:
+        system_content += (
+            "\nCRITICAL: The user is asking about business documents. "
+            "You MUST call rag_tool right now. "
+            "Do NOT call gmail_intelligence_tool. "
+            "Do NOT ask the user any questions. "
+            "Call rag_tool with query='" + last_user_msg + "'.\n"
+        )
+    elif is_email_query:
         system_content += (
             "\nCRITICAL: The user is asking about emails. "
             "You MUST call gmail_intelligence_tool right now. "
