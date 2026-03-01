@@ -26,6 +26,9 @@ DB_PATH = os.path.join(SCRIPT_DIR, "..", "db", "slingshot.db")
 # ── Imports from LangChain (same env as notebook) ────────────────────────
 from langchain_ollama import OllamaEmbeddings
 from langchain_community.vectorstores import FAISS
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def main():
     print(f"[INFO] Loading FAISS index from: {FAISS_INDEX_DIR}")
@@ -35,7 +38,7 @@ def main():
         sys.exit(1)
 
     # Load the FAISS vector store (same embedding model as notebook)
-    embedding_model = OllamaEmbeddings(model="qwen3-embedding:4b")
+    embedding_model = OllamaEmbeddings(model=os.getenv("OLLAMA_EMBEDDING_MODEL", "qwen3-embedding:4b"))
     vector_store = FAISS.load_local(
         FAISS_INDEX_DIR,
         embedding_model,
