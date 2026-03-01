@@ -40,9 +40,12 @@ def analyze_email(email):
 
     prompt = (
         "Return ONLY a JSON object, no markdown, no explanation.\n"
+        "IMPORTANT: Only use information EXPLICITLY stated in the email below.\n"
+        "If a field is NOT mentioned in the email, use \"N/A\" for that field.\n"
+        "Do NOT guess or make up any values.\n\n"
         '{"type":"<invoice|review|networking|event|promotional|other>",'
-        '"suggested_action":"<action>","vendor":"<name>","amount":"<amount>",'
-        '"due_date":"<date>","sentiment":"<positive|negative|neutral>"}\n\n'
+        '"suggested_action":"<action>","vendor":"<N/A if not mentioned>","amount":"<N/A if not mentioned>",'
+        '"due_date":"<N/A if not mentioned>","sentiment":"<positive|negative|neutral>"}\n\n'
         f"Subject: {subject}\nFrom: {sender}\nBody: {truncated_body}"
     )
 
@@ -169,6 +172,28 @@ def rag_tool(query: str):
 
 gmail_tools = GmailToolkit().get_tools()
 
+def extract_sender_from_query(query: str):
+    """Extract sender/person name from queries like 'email from ommi'."""
+    # Words that signal the end of a sender name
+    boundary_words = (
+        "regarding|about|concerning|for|with|on|that|which|and|or|"
+        "invoice|invoices|payment|receipt|bill|report|review|policy|"
+        "subject|today|yesterday|last|this|please|can|could|check"
+    )
+    # Capture one or two words after from/by/sent by, but stop at boundary words
+    patterns = [
+        rf"(?:from|by|sent by)\s+([a-zA-Z0-9_.+-]+(?:\s+(?!{boundary_words})[a-zA-Z0-9_.+-]+)?)",
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, query, re.IGNORECASE)
+        if match:
+            name = match.group(1).strip()
+            # Filter out stop words that might get captured
+            stop_words = {"me", "my", "the", "a", "an", "inbox", "email", "mail"}
+            if name.lower() not in stop_words:
+                return name
+    return None
+
 @tool
 def gmail_intelligence_tool(query: str = "in:inbox", max_results: int = 5):
     """
@@ -189,27 +214,35 @@ def gmail_intelligence_tool(query: str = "in:inbox", max_results: int = 5):
 
     normalized_query = query.lower().strip()
 
-    if "important" in normalized_query or "urgent" in normalized_query:
-        gmail_query = "in:inbox"
+    sender = extract_sender_from_query(normalized_query)
 
+    # Build Gmail query parts
+    query_parts = ["in:inbox"]
+
+    if sender:
+        query_parts.append(f"from:{sender}")
+    # Only add subject/keyword filters when there's NO sender
+    # (combining from: + subject: is usually too restrictive)
     elif "invoice" in normalized_query:
-        gmail_query = "in:inbox subject:invoice"
-
+        query_parts.append("subject:invoice")
+    elif "important" in normalized_query or "urgent" in normalized_query:
+        pass  # no additional filter, just inbox
     elif "network" in normalized_query:
-        gmail_query = "in:inbox subject:(invitation OR connect)"
-
+        query_parts.append("subject:(invitation OR connect)")
     else:
+        # No sender, no known category — do keyword extraction
         stop_words = {
             "can", "you", "tell", "me", "about", "the", "most", "recent",
             "mail", "mails", "email", "emails", "my", "i", "got", "any",
             "show", "find", "get", "check", "do", "have", "a", "an", "in",
-            "from", "is", "it", "what", "of", "to", "and", "or", "if"
+            "from", "is", "it", "what", "of", "to", "and", "or", "if",
+            "just", "regarding", "out"
         }
         keywords = [w for w in normalized_query.split() if w not in stop_words]
         if keywords:
-            gmail_query = "in:inbox " + " ".join(keywords)
-        else:
-            gmail_query = "in:inbox"
+            query_parts.append(" ".join(keywords))
+
+    gmail_query = " ".join(query_parts)
 
     print(f"[Gmail] Search query: {gmail_query}")
 
@@ -217,6 +250,53 @@ def gmail_intelligence_tool(query: str = "in:inbox", max_results: int = 5):
         "query": gmail_query,
         "max_results": max_results
     })
+
+    # Cascading fallback when sender-based search returns nothing
+    # Tier 1: from:sender (already tried above)
+    # Tier 2: sender + topic keyword
+    # Tier 3: sender only (broadest)
+    def _parse_gmail_result(raw):
+        """Parse raw Gmail result to a list."""
+        if isinstance(raw, str):
+            try:
+                return json.loads(raw)
+            except json.JSONDecodeError:
+                return []
+        return raw if isinstance(raw, list) else []
+
+    if sender:
+        parsed = _parse_gmail_result(raw_result)
+        if len(parsed) == 0:
+            # Detect topic keyword from user query
+            topic_keywords = {
+                "invoice": "invoice", "payment": "payment", "receipt": "receipt",
+                "bill": "bill", "meeting": "meeting", "event": "event",
+                "network": "networking", "connect": "connect",
+            }
+            topic = ""
+            for kw, label in topic_keywords.items():
+                if kw in normalized_query:
+                    topic = label
+                    break
+
+            # Tier 2: sender + topic
+            if topic:
+                fallback_query = f"in:inbox {sender} {topic}"
+                print(f"[Gmail] Tier 2 fallback: {fallback_query}")
+                raw_result = search_tool.invoke({
+                    "query": fallback_query,
+                    "max_results": max_results
+                })
+                parsed = _parse_gmail_result(raw_result)
+
+            # Tier 3: sender only (if Tier 2 still returned nothing)
+            if len(parsed) == 0:
+                fallback_query = f"in:inbox {sender}"
+                print(f"[Gmail] Tier 3 fallback: {fallback_query}")
+                raw_result = search_tool.invoke({
+                    "query": fallback_query,
+                    "max_results": max_results
+                })
 
     if isinstance(raw_result, str):
         try:
@@ -332,9 +412,21 @@ def chat_node(state: ChatState, config=None):
     is_email_query = any(kw in last_user_msg for kw in EMAIL_KEYWORDS)
     is_rag_query = any(kw in last_user_msg for kw in RAG_KEYWORDS)
 
-    # RAG takes priority — if the query mentions documents/invoices/reviews, use RAG
-    if is_rag_query:
-        is_email_query = False
+    # Detect email-compose intent: "draft email", "reply email", "write email", "send email"
+    # These mean the user wants to CREATE an email, not SEARCH Gmail
+    compose_patterns = [
+        r"(?:draft|write|compose|create|send|reply|respond|prepare|generate)\s+(?:a\s+|an\s+|the\s+)?(?:reply\s+)?(?:email|mail|response)",
+        r"(?:reply|respond)\s+(?:to\s+)?(?:this|that|the|his|her)",
+    ]
+    is_compose_intent = any(re.search(p, last_user_msg, re.IGNORECASE) for p in compose_patterns)
+
+    if is_email_query and is_rag_query:
+        if is_compose_intent:
+            # User wants to compose using document data → use RAG
+            is_email_query = False
+        else:
+            # User wants to look up emails about a topic → use Gmail
+            is_rag_query = False
 
     user_facts = extract_user_facts(state["messages"])
 
