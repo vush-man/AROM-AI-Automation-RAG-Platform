@@ -1,3 +1,4 @@
+import os
 import sys
 from langchain_ollama import ChatOllama, OllamaEmbeddings
 from langchain_community.vectorstores import FAISS
@@ -15,10 +16,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 llm = ChatOllama(
-    model = "qwen2.5:3b"
+    model=os.getenv("OLLAMA_CHAT_MODEL", "qwen2.5:3b")
 )
 embeddings = OllamaEmbeddings(
-    model = "qwen3-embedding:4b"
+    model=os.getenv("OLLAMA_EMBEDDING_MODEL", "qwen3-embedding:4b")
 )
 
 vector_store = FAISS.load_local(
