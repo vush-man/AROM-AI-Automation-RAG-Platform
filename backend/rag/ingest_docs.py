@@ -7,6 +7,9 @@ from langchain_community.document_loaders import (
     Docx2txtLoader,
     TextLoader,
 )
+from dotenv import load_dotenv
+
+load_dotenv()
 
 LOADERS = {
     ".pdf": PyPDFLoader,
@@ -79,8 +82,9 @@ def main():
     chunks = splitter.split_documents(all_docs)
     print(f"   Created {len(chunks)} searchable chunks.")
 
-    print("\n🧠 Generating AI embeddings via Ollama (qwen3-embedding:4b)...")
-    embedding = OllamaEmbeddings(model='qwen3-embedding:4b')
+    embed_model = os.getenv("OLLAMA_EMBEDDING_MODEL", "qwen3-embedding:4b")
+    print(f"\n🧠 Generating AI embeddings via Ollama ({embed_model})...")
+    embedding = OllamaEmbeddings(model=embed_model)
 
     vector_store = FAISS.from_documents(chunks, embedding)
 
