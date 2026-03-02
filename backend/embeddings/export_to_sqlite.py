@@ -1,15 +1,12 @@
 """
 export_to_sqlite.py
 ====================
-Run this script AFTER running embedding.ipynb to export the FAISS vector
+Generates a FAISS index from company documents and exports the vector
 data (chunks + embeddings) into the SQLite database so the Node.js
 backend can query them.
 
-Usage (run in the same Python env as the notebook):
+Usage:
     python embeddings/export_to_sqlite.py
-
-Or run it as a cell at the end of embedding.ipynb:
-    %run export_to_sqlite.py
 """
 
 import os
@@ -34,7 +31,7 @@ def main():
     print(f"[INFO] Loading FAISS index from: {FAISS_INDEX_DIR}")
     if not os.path.isdir(FAISS_INDEX_DIR):
         print(f"[ERROR] FAISS index not found at {FAISS_INDEX_DIR}")
-        print("        Run embedding.ipynb first to generate the index.")
+        print("        Run this script with documents in docs/ to generate the index.")
         sys.exit(1)
 
     # Load the FAISS vector store (same embedding model as notebook)
