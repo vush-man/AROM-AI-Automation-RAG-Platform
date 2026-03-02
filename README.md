@@ -364,6 +364,7 @@ Once configured, ask the chatbot things like:
 
 This is a **demo product** — the following enhancements are planned for the production release:
 
+- [ ] **Structured financial query engine** — Store extracted invoice fields in PostgreSQL and route aggregation queries (totals, GST, date ranges) to deterministic SQL instead of LLM-based RAG computation
 - [ ] **Multi-user workspaces** — Team-based document collections and shared chat history
 - [ ] **Role-based access control** — Admin, editor, and viewer permission levels
 - [ ] **Cloud deployment** — Dockerized setup with CI/CD pipeline
