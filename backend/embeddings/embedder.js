@@ -3,8 +3,8 @@ const logger = require("../utils/logger");
 /**
  * Ollama Embedding Client
  *
- * Calls the local Ollama REST API to generate embeddings using the same
- * model as embedding.ipynb (qwen3-embedding:4b).
+ * Calls the local Ollama REST API to generate embeddings using the
+ * qwen3-embedding:4b model (same model used by export_to_sqlite.py).
  *
  * Ollama must be running: `ollama serve`
  */
@@ -53,5 +53,4 @@ const embedder = {
     }
   },
 };
-
 module.exports = embedder;
